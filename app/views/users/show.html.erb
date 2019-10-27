@@ -21,18 +21,17 @@
           <% end %>
     <% end %>
     
+    <p></p> 
+    <%= image_tag("jocat.jpg", class:"img-fluid", :size => "300x190")%>
     <p></p>
-    <%= image_tag("jocat.jpg", class:"img-fluid", :size => "300x190")%> 
-    <p></p>
+      
+    <h5>Status: &nbsp &nbsp  </h5>
+    <p> <%= @user.status %> </p>
     
     <% if @user == current_user %>
-      <h3>Your Status: &nbsp &nbsp  </h3>
-      <p> I have a pet! So I use petSNAP!! It's GREAT!!!!!!!</p>
-    <% else %>
-       <h3> <%= @user.username %>'s Status:</h3>
-       <p> I have a pet! So I use petSNAP!! It's GREAT!!!!!!!</p>
-    <% end %>      
-      
+      <%= link_to 'Update your status', edit_user_path, class: 'btn btn-info'%>
+    <% end %>  
+    
     <p>
       <% if @user == current_user %>  
           <p>You follow: <%= @user.follow_count %> 
