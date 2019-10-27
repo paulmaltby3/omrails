@@ -313,7 +313,7 @@ DEPENDENCIES
   bootstrap (~> 4.3.1)
   byebug
   coffee-rails (~> 4.2)
-  devise (~> 4.5.0)
+  devise
   ffi (= 1.11.1)
   inherited_resources!
   jbuilder (~> 2.5)
