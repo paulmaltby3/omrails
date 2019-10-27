@@ -44,11 +44,7 @@
           <p></p>
       <% end %> 
     </p>
-    
-    <% if @user == current_user %>
-      <%= link_to "Edit status", "#", class: "btn btn-info btn-sm" %>
-    <% end %>  
-    
+
     <% if @user == current_user %>
       <p></p>
       <h3> Tails from people you follow:</h3>
