@@ -39,13 +39,6 @@
       <%= link_to 'Update your status or profile pic', edit_user_path, class: 'btn btn-info'%>
     <% end %>  
    
-    <h5>Status: &nbsp &nbsp  </h5>
-    <p> <%= @user.status %> </p>
-    
-    <% if @user == current_user %>
-      <%= link_to 'Update your status', edit_user_path, class: 'btn btn-info'%>
-    <% end %>  
-    
     <p>
       <% if @user == current_user %>  
           <p>You follow: <%= @user.follow_count %> 
