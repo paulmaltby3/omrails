@@ -20,10 +20,27 @@
               <p></p>
           <% end %>
     <% end %>
+
+      
     
-    <p></p> 
-    <%= image_tag("jocat.jpg", class:"img-fluid", :size => "300x190")%>
-    <p></p>
+      <p></p>
+	    <!--<#% if @user.avatar? %>-->
+	    <% if @user.avatar.attached? %>
+	      <%= image_tag @user.avatar.url(:large_avatar) %>
+	    <% else %>
+	      <%= image_tag("jocat.jpg", class:"img-fluid", :size => "300x190")%>
+	    <% end %>
+      <p></p>
+      
+      <h5>Status: &nbsp &nbsp  </h5>
+      <p> <%= @user.status %> </p>
+    
+    <% if @user == current_user %>
+      <%= link_to 'Update your status or profile pic', edit_user_path, class: 'btn btn-info'%>
+    <% end %>  
+    <!--<#% else %> -->  
+      
+      
       
     <h5>Status: &nbsp &nbsp  </h5>
     <p> <%= @user.status %> </p>
