@@ -9,6 +9,8 @@ class Tweet < ApplicationRecord
   #convert_options currently being tested https://stackoverflow.com/questions/1041884/iphone-camera-images-are-rotated-when-uploaded-to-web
   has_attached_file :image, 
                     #:convert_options => { :all => '-auto-orient' }
-                    :source_file_options =>  {:all => '-auto-orient'}
+                    :source_file_options =>  {:all => '-auto-orient'},
+                    :styles => {  :original => ""}
+                    
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 end
