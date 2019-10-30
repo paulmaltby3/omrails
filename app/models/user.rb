@@ -7,7 +7,9 @@ class User < ApplicationRecord
   has_many:tweets   
 
   has_attached_file :avatar,# default_url: "avatar.jpg",
-                      :styles => {  :large_avatar => "300x300>", 
+                      :source_file_options =>  {:all => '-auto-orient'},
+                      :styles => {  :original => "",
+                                    :large_avatar => "300x300>", 
                                     :small_avatar => "50x50>" }
   
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
