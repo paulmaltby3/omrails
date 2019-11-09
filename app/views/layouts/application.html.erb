@@ -26,6 +26,14 @@
           <% if user_signed_in? %>
             <li class="nav-item"><%= link_to "Your homepage", user_path(current_user.username), class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "Log out", signout_path, method: :delete, class: "nav-link" %></li>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <li class="nav-item">
+              <% if @user.avatar? %>
+          	     <%= image_tag @user.avatar.url(:small_avatar) %>
+          	    <% else %>
+          	      <%= image_tag("jocat.jpg", class:"img-fluid", :size => "50x50")%>
+          	    <% end %>
+            </li>
 
           <% else %>
             <li class="nav-item"><%= link_to "Sign up", signup_path, class: "btn btn-info" %></li>
