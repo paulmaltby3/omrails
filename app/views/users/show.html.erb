@@ -59,7 +59,20 @@
             <div class="card bg-light" style="width: 18rem;">
                 <div class="card-body">
                     <!-- for some reason below I can't make a link_to the user :/ -->
-                    <h5 class="card-title"><%= link_to tweet.user.username, user_path(tweet.user.username) %></h5>
+                    <h5 class="card-title">
+                      <% if @user.avatar? %>
+                  	     <%= link_to user_path(@user.username) do %>
+                  	       <% image_tag @user.avatar.url(:small_avatar), class: 'img-circle'  %>
+                  	     <% end %>
+                  	  <% else %>
+                  	     <%= link_to user_path(@user.username) do %>
+                  	       <%= image_tag("jocat.jpg", class: 'img-circle', :size => "50x50") %>
+                  	     <% end %>
+                  	  <% end %>
+                     &nbsp &nbsp 
+                      <%= link_to tweet.user.username, user_path(tweet.user.username) %>
+                    </h5>
+                    
                     <center><%= image_tag tweet.image, class: "img-fluid", 
                       src: ' ',
                       onerror: "this.style.display='none'"

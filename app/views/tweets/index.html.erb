@@ -15,9 +15,33 @@
               <!-- This used to work, but I can't work out what has changed from the earlier commit -->
               <!-- It only works locally with link_to current_user.username, user_path(current_user.username)   which is obviously wrong as it names all the tweets as the current user -->
               <% if user_signed_in? %>
-                  <h5 class="card-title"> <%= link_to tweet.user.username, user_path(tweet.user.username) %> </h5>
+                  <h5 class="card-title">
+                     <% if @user.avatar? %>
+                	     <%= link_to user_path(@user.username) do %>
+                	       <% image_tag @user.avatar.url(:small_avatar), class: 'img-circle'  %>
+                	     <% end %>
+                	  <% else %>
+                	     <%= link_to user_path(@user.username) do %>
+                	       <%= image_tag("jocat.jpg", class: 'img-circle', :size => "50x50") %>
+                	     <% end %>
+                	  <% end %>
+                  <%= link_to tweet.user.username, user_path(tweet.user.username) %>
+                  &nbsp &nbsp
+                </h5>
               <% else %>
-                  <h5 class="card-title"> <%= tweet.user.username %> </h5>
+                  <h5 class="card-title">
+                     <% if @user.avatar? %>
+                	     <%= link_to user_path(@user.username) do %>
+                	       <% image_tag @user.avatar.url(:small_avatar), class: 'img-circle'  %>
+                	     <% end %>
+                	  <% else %>
+                	     <%= link_to user_path(@user.username) do %>
+                	       <%= image_tag("jocat.jpg", class: 'img-circle', :size => "50x50") %>
+                	     <% end %>
+                	  <% end %>
+                    &nbsp &nbsp
+                    <%= tweet.user.username %> 
+                  </h5>
               <% end %>
               
               <center>
