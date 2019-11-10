@@ -60,13 +60,13 @@
                 <div class="card-body">
                     <!-- for some reason below I can't make a link_to the user :/ -->
                     <h5 class="card-title">
-                      <% if @user.username.avatar? %>
-                  	     <%= link_to user_path(@user.username) do %>
-                  	       <% image_tag @user.username.avatar.url(:small_avatar), class: 'img-circle'  %>
+                      <% if tweet.user.avatar? %>
+                  	     <%= link_to user_path(tweet.user.username) do %>
+                  	       <% image_tag tweet.user.avatar.url(:small_avatar)  %>
                   	     <% end %>
                   	  <% else %>
-                  	     <%= link_to user_path(@user.username) do %>
-                  	       <%= image_tag("jocat.jpg", class: 'img-circle', :size => "50x50") %>
+                  	     <%= link_to user_path(tweet.user.username) do %>
+                  	       <%= image_tag("jocat.jpg", :size => "50x50") %>
                   	     <% end %>
                   	  <% end %>
                       &nbsp &nbsp 
