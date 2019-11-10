@@ -31,11 +31,11 @@
             <li class="nav-item">
               <% if current_user.avatar? %>
           	     <%= link_to user_path(current_user.username) do %>
-          	       <% image_tag current_user.avatar.url(:small_avatar), class: 'img-circle'  %>
+          	       <% image_tag current_user.avatar.url(:small_avatar) %>
           	     <% end %>
           	  <% else %>
           	     <%= link_to user_path(current_user.username) do %>
-          	       <%= image_tag("jocat.jpg", class: 'img-circle', :size => "50x50") %>
+          	       <%= image_tag("jocat.jpg", :size => "50x50") %>
           	     <% end %>
           	  <% end %>
             </li>
