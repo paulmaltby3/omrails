@@ -18,7 +18,7 @@
                   <h5 class="card-title">
                       <% if tweet.user.avatar? %>
                   	     <%= link_to user_path(tweet.user.username) do %>
-                  	       <% image_tag tweet.user.avatar.url(:small_avatar, :class => "rounded-circle")  %>
+                  	       <% image_tag tweet.user.avatar.url(:small_avatar), :class => "rounded-circle"  %>
                   	     <% end %>
                   	  <% else %>
                   	     <%= link_to user_path(tweet.user.username) do %>
@@ -33,7 +33,7 @@
                 <h5 class="card-title">
                       <% if tweet.user.avatar? %>
                   	     <%= link_to user_path(tweet.user.username) do %>
-                  	       <% image_tag tweet.user.avatar.url(:small_avatar, :class => "rounded-circle")  %>
+                  	       <% image_tag tweet.user.avatar.url(:small_avatar), :class => "rounded-circle"  %>
                   	     <% end %>
                   	  <% else %>
                   	     <%= link_to user_path(tweet.user.username) do %>
