@@ -62,11 +62,11 @@
                     <h5 class="card-title">
                       <% if tweet.user.avatar? %>
                   	     <%= link_to user_path(tweet.user.username) do %>
-                  	       <% image_tag tweet.user.avatar.url(:small_avatar)  %>
+                  	       <% image_tag tweet.user.avatar.url(:small_avatar, :class => "rounded-circle")  %>
                   	     <% end %>
                   	  <% else %>
                   	     <%= link_to user_path(tweet.user.username) do %>
-                  	       <%= image_tag("jocat.jpg", :size => "50x50") %>
+                  	       <%= image_tag("jocat.jpg", :size => "50x50", :class => "rounded-circle") %>
                   	     <% end %>
                   	  <% end %>
                       &nbsp 
