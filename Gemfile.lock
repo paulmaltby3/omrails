@@ -168,7 +168,8 @@ GEM
       mimemagic (~> 0.3.0)
     pg (1.1.4)
     popper_js (1.14.5)
-    puma (3.12.1)
+    puma (4.3.3)
+      nio4r (~> 2.0)
     rack (2.0.7)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -279,7 +280,7 @@ DEPENDENCIES
   listen
   paperclip (~> 5.0.0)
   pg (~> 1.1.4)
-  puma (~> 3.0)
+  puma (~> 4.3)
   rails (~> 5.0.0)
   sass-rails
   spring
